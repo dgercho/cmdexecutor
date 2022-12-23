@@ -1,6 +1,6 @@
 # CmdExecutor
 
-Simple and lightweight cmd executor C++ library. Made for Windows, Linux and MacOS.
+Simple and lightweight cmd executor C++ library. Runs on Windows, Linux and MacOS.
 
 ## How does it works?
 Using pipes by implementing the `popen` (or `_popen` for Windows) API call.
