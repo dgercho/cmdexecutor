@@ -11,9 +11,9 @@ auto Executor::run_command(std::string command) -> ExecutorResult
     std::array<char, 256> buffer {};
     std::string result;
 #ifdef _WIN32
-    FILE *pipe = _popen(command.c_str(), "r");
+    FILE *pipe = _popen((command+" 2>&1").c_str(), "r");
 #else
-    FILE *pipe = popen(command.c_str(), "r");
+    FILE *pipe = popen((command+" 2>&1").c_str(), "r");
 #endif
 
     try {
