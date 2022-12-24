@@ -1,10 +1,15 @@
 # CmdExecutor
-Simple and lightweight cmd executor C++ library. Runs on Windows, Linux and MacOS.
+Simple and lightweight cmd executor C++ library. Runs on Windows, Linux and macOS.
 
 [![Windows CI](https://github.com/dgercho/cmdexecutor/actions/workflows/msvc.yml/badge.svg?branch=main)](https://github.com/dgercho/cmdexecutor/actions/workflows/msvc.yml)
 
 ## How does it works?
-Using pipes by implementing the `popen` (or `_popen` for Windows) API call.
+Using pipes by implementing the `popen` (or `_popen` for Windows) function.
+
+Please note that this project **won't work** for UWF (Universal Windows Platform) applications:
+> Pipe functionality is not available to UWP apps.
+
+[Click here for more information](https://learn.microsoft.com/en-us/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps?view=msvc-170)
 
 ## How to use the library?
 First, copy the `include` folder to your project. Note that this library uses CMake.
