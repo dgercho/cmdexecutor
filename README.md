@@ -32,14 +32,8 @@ After including the library to your project, Let's run a simple command:
 We can check also the exit code of our execution:
 
 ```
-    if(result.get_exit_code() == 0)
-    {
-        std::cout << "STDOUT: " + result.get_stdout() << std::endl;
-    }
-    else
-    {
-        std::cout << "STDERR: " + result.get_stderr() << std::endl;
-    }
+    std::cout << "Output: " + result.get_result() << std::endl;
+    std::cout << "Exit code: " + std::string(result.get_exit_code()) << std::endl;
 ```
 
 For more information check the sample `demo.cpp` implementation.

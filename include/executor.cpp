@@ -7,7 +7,7 @@ Executor::Executor() {}
 
 auto Executor::run_command(std::string command) -> ExecutorResult
 {
-    int exitcode = 0;
+    int exit_code = 0;
     std::array<char, 256> buffer {};
     std::string result;
 #ifdef _WIN32
@@ -30,20 +30,10 @@ auto Executor::run_command(std::string command) -> ExecutorResult
         throw;
     }
 #ifdef _WIN32
-        exitcode = _pclose(pipe);
+        exit_code = _pclose(pipe);
 #else
-        exitcode = pclose(pipe);
+        exit_code = pclose(pipe);
 #endif
-
-    if (exitcode != 0) 
-    {
-        auto command_result = ExecutorResult("",result,exitcode);
-        return command_result;
-    }
-    else
-    {
-        auto command_result = ExecutorResult(result,"",exitcode);
-        return command_result;
-    }
-
+    auto command_result = ExecutorResult(result,exit_code);
+    return command_result;
 }
