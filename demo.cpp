@@ -5,14 +5,12 @@ auto main() -> int
 {
     auto exec = Executor();
     ExecutorResult result = exec.run_command("whoami");
+    std::cout << "Output: " + result.get_result() << std::endl;
+    std::cout << "Exit code: " + std::to_string(result.get_exit_code()) << std::endl;
 
-    if(result.get_exit_code() == 0)
+    if(result.get_exit_code() != 0)
     {
-        std::cout << "STDOUT: " + result.get_stdout() << std::endl;
-    }
-    else
-    {
-        std::cout << "STDERR: " + result.get_stderr() << std::endl;
+        std::cout << "Error!";
     }
 
     return 0;
