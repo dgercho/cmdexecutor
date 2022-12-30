@@ -6,6 +6,7 @@ class Executor
 {
 public:
     Executor();
+    
     /* Execute a command. */
     auto run_command(std::string) -> ExecutorResult;
 };
