@@ -17,7 +17,9 @@ To include with CMake, just add those lines to youe CMake project:
 
 ```
     ...
-    add_subdirectory(include)
+    include_directories(include)
+    add_subdirectory(include/cmdexecutor)
+
     // add_executable(...)
     target_link_libraries(YourProject PRIVATE CmdExecutor)
 ```
