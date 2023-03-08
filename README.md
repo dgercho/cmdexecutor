@@ -1,7 +1,7 @@
 # CmdExecutor
 Simple and lightweight cmd executor C++ library. Runs on Windows, Linux and macOS.
 
-[![Windows CI](https://github.com/dgercho/cmdexecutor/actions/workflows/msvc.yml/badge.svg?branch=main)](https://github.com/dgercho/cmdexecutor/actions/workflows/msvc.yml)
+[![Windows CI](https://github.com/dgercho/cmdexecutor/actions/workflows/cmake.yml/badge.svg?branch=main)](https://github.com/dgercho/cmdexecutor/actions/workflows/cmake.yml)
 
 ## How does it works?
 Using pipes by implementing the `popen` (or `_popen` for Windows) function.
